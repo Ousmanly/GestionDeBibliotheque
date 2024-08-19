@@ -1,95 +1,3 @@
-<!-- <template>
-  <div class="container mt-5">
-    <h1 class="mb-4">Liste des Livres</h1>
-
-    <button class="btn btn-primary mb-3" @click="afficherFormulaire('ajout')">Ajouter un Livre</button>
-
-    <div v-if="afficherFormulaireState" class="mb-4">
-      <h2>{{ mode === 'ajout' ? 'Ajouter un Livre' : 'Modifier le Livre' }}</h2>
-      <form @submit.prevent="mode === 'ajout' ? ajouterLivre() : enregistrerModification()">
-        <div class="mb-3">
-          <label for="titre" class="form-label">Titre :</label>
-          <input type="text" class="form-control" v-model="livreForm.titre" id="titre" required />
-        </div>
-        <div class="mb-3">
-          <label for="auteur" class="form-label">Auteur :</label>
-          <input type="text" class="form-control" v-model="livreForm.auteur" id="auteur" required />
-        </div>
-        <button type="submit" class="btn btn-success">{{ mode === 'ajout' ? 'Ajouter' : 'Enregistrer' }}</button>
-        <button type="button" class="btn btn-secondary" @click="annulerAjout">Annuler</button>
-      </form>
-    </div>
-
-    <table v-if="!afficherFormulaireState" class="table table-striped">
-      <thead>
-        <tr>
-          <th>Titre</th>
-          <th>Auteur</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(livre, index) in livres" :key="index">
-          <td>{{ livre.titre }}</td>
-          <td>{{ livre.auteur }}</td>
-          <td>
-            <button class="btn btn-warning btn-sm" @click="afficherFormulaire('modifier', index)">Modifier</button>
-            <button class="btn btn-danger btn-sm" @click="supprimerLivre(index)">Supprimer</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</template>
-
-<script setup>
-import { ref } from 'vue';
-
-const livres = ref([
-  { titre: 'Livre A', auteur: 'Auteur A' },
-  { titre: 'Livre B', auteur: 'Auteur B' },
-]);
-
-const afficherFormulaireState = ref(false);
-const mode = ref('ajout');
-const livreForm = ref({ titre: '', auteur: '' });
-let indexLivreAModifier = null;
-
-const afficherFormulaire = (modeOperation, index = null) => {
-  mode.value = modeOperation;
-  afficherFormulaireState.value = true;
-  if (modeOperation === 'modifier' && index !== null) {
-    indexLivreAModifier = index;
-    livreForm.value = { ...livres.value[index] };
-  } else {
-    livreForm.value = { titre: '', auteur: '' };
-  }
-};
-
-const ajouterLivre = () => {
-  livres.value.push({ ...livreForm.value });
-  annulerAjout();
-};
-
-const enregistrerModification = () => {
-  if (indexLivreAModifier !== null) {
-    livres.value[indexLivreAModifier] = { ...livreForm.value };
-    annulerAjout();
-  }
-};
-
-const annulerAjout = () => {
-  livreForm.value = { titre: '', auteur: '' };
-  afficherFormulaireState.value = false;
-};
-
-const supprimerLivre = (index) => {
-  livres.value.splice(index, 1);
-};
-</script>
-
-<style scoped>
-</style> -->
 <template>
   <div class="container mt-5">
     <h1 class="mb-4">Liste des Livres</h1>
@@ -135,9 +43,15 @@ const supprimerLivre = (index) => {
           <td>{{ livre.titre }}</td>
           <td>{{ livre.auteur }}</td>
           <td>
-            <button class="btn btn-warning btn-sm" @click="afficherFormulaire('modifier', index)">Modifier</button>
-            <button class="btn btn-danger btn-sm" @click="supprimerLivre(index)">Supprimer</button>
-            <button class="btn btn-info btn-sm" @click="voirDetail(index)">Détails</button>
+            <button class="btn  btn-sm" @click="afficherFormulaire('modifier', index)">
+              <i class="fa-solid fa-pen-to-square" style="color: #1ac163; font-size: 25px;"></i>
+            </button>
+            <button class="btn btn-sm" @click="supprimerLivre(index)">
+              <i class="fa-solid fa-trash" style="color: #e30d0d; font-size: 25px;"></i>
+            </button>
+            <button class="btn  btn-sm" @click="voirDetail(index)">
+              <i class="fa-solid fa-eye" style="color: #4596d3; font-size: 25px;"></i>
+            </button>
           </td>
         </tr>
       </tbody>
