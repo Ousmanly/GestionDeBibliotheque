@@ -90,7 +90,6 @@ const supprimerLivre = (index) => {
 
 <style scoped>
 </style> -->
-
 <template>
   <div class="container mt-5">    
     <h1 class="mb-4">Liste des Livres</h1>
@@ -136,9 +135,15 @@ const supprimerLivre = (index) => {
           <td>{{ livre.titre }}</td>
           <td>{{ livre.auteur }}</td>
           <td>
-            <button class="btn btn-warning btn-sm" @click="afficherFormulaire('modifier', index)">Modifier</button>
-            <button class="btn btn-danger btn-sm" @click="supprimerLivre(index)">Supprimer</button>
-            <button class="btn btn-info btn-sm" @click="voirDetail(index)">Détails</button>
+            <button class="btn  btn-sm" @click="afficherFormulaire('modifier', index)">
+              <i class="fa-solid fa-pen-to-square" style="color: #1ac163; font-size: 25px;"></i>
+            </button>
+            <button class="btn btn-sm" @click="supprimerLivre(index)">
+              <i class="fa-solid fa-trash" style="color: #e30d0d; font-size: 25px;"></i>
+            </button>
+            <button class="btn  btn-sm" @click="voirDetail(index)">
+              <i class="fa-solid fa-eye" style="color: #4596d3; font-size: 25px;"></i>
+            </button>
           </td>
         </tr>
       </tbody>

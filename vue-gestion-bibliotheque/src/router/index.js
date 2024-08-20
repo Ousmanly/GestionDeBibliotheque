@@ -31,6 +31,8 @@ import BooksView from '@/views/BooksView.vue';
 import MembersView from '@/views/MembersView.vue';
 import LoansView from '@/views/LoansView.vue';
 import ListeLivre from '@/components/ListeLivre.vue';
+import ListePretLivre from '@/components/ListePretLivre.vue';
+
 // import AjoutLivre from '@/components/AjoutLivre.vue';
 // import ModifierLivre from '@/components/ModifierLivre.vue';
 
@@ -40,6 +42,7 @@ const routes = [
   { path: '/members', component: MembersView },
   { path: '/loans', component: LoansView },
   { path: '/listlivre', component: ListeLivre },
+  { path: '/listpretlivre', component: ListePretLivre },
   // { path: '/ajoutlivre', component: AjoutLivre },
   // { path: '/modifierlivre/:index', component: ModifierLivre },
 ];
