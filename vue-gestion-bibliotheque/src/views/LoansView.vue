@@ -1,10 +1,10 @@
 <template>
-  <div class="container mt-5 text-center">
+  <div class="container mt-5">
     <h1 class="mb-5">Gestion des Prets</h1>
-    <RouterLink class="list text-decoration-none text-white bg-success py-2 px-3 fw-bold rounded" to="/listpretlivre">Ajouter des Prets</RouterLink>
+    <liste-pret-livre/>
   </div>
 </template>
 
 <script setup>
-// Logic for Loans View
+import ListePretLivre from '@/components/Prets/ListePretLivre.vue';
 </script>

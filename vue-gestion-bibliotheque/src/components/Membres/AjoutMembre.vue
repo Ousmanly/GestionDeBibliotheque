@@ -38,3 +38,20 @@ const handleSubmit = () => {
   }
 };
 </script>
+
+<style scoped>
+  form {
+  width: 60%;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.form-control {
+  border: 1px solid #6f7f8f;
+  border-radius: 10px;
+}
+.form-control:active {
+  border-color:none;
+  outline: none;
+}
+</style>

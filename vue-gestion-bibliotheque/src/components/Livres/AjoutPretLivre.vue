@@ -1,40 +1,68 @@
 <template>
   <div>
-    <h2>{{ mode === 'ajout' ? 'Ajouter un Livre' : 'Modifier le Livre' }}</h2>
-    <form @submit.prevent="handleSubmit">
+    <form @submit.prevent="handleSubmit" class="form mb-6">
       <div class="mb-3">
         <label for="titre" class="form-label">Titre :</label>
-        <input type="text" class="form-control" v-model="livreForm.titre" id="titre" required />
+        <input
+          type="text"
+          class="form-control"
+          v-model="livreForm.titre"
+          id="titre"
+          required
+        />
       </div>
       <div class="mb-3">
         <label for="auteur" class="form-label">Auteur :</label>
-        <input type="text" class="form-control" v-model="livreForm.auteur" id="auteur" required />
+        <input
+          type="text"
+          class="form-control"
+          v-model="livreForm.auteur"
+          id="auteur"
+          required
+        />
       </div>
-      <button type="submit" class="btn btn-success me-3">{{ mode === 'ajout' ? 'Ajouter' : 'Enregistrer' }}</button>
-      <button type="button" class="btn btn-secondary" @click="$emit('annuler')">Annuler</button>
+      <button type="submit" class="btn btn-success me-3">
+        {{ mode === "ajout" ? "Ajouter" : "Enregistrer" }}
+      </button>
+      <button type="button" class="btn btn-secondary" @click="$emit('annuler')">
+        Annuler
+      </button>
     </form>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
+import { defineProps, defineEmits } from "vue";
 
 const props = defineProps({
   mode: String,
-  livreForm: Object
+  livreForm: Object,
 });
 
-const emit = defineEmits(['annuler', 'ajouter', 'modifier']);
+const emit = defineEmits(["annuler", "ajouter", "modifier"]);
 
 const handleSubmit = () => {
-  if (props.mode === 'ajout') {
-    emit('ajouter');
+  if (props.mode === "ajout") {
+    emit("ajouter");
   } else {
-    emit('modifier');
+    emit("modifier");
   }
 };
 </script>
 
 <style scoped>
-/* Ajoutez ici vos styles personnalisés si nécessaire */
+form {
+  width: 60%;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.form-control {
+  border: 1px solid #6f7f8f;
+  border-radius: 10px;
+}
+.form-control:active {
+  border-color:none;
+  outline: none;
+}
 </style>

@@ -1,7 +1,5 @@
 <template>
   <div class="container mt-5">
-    <h1 class="mb-4">Liste des Prêts de Livres</h1>
-
     <button class="btn btn-primary mb-3" @click="afficherFormulaire('ajout')">Ajouter un Prêt</button>
 
     <AjoutLivre
