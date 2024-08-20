@@ -1,10 +1,9 @@
 <template>
   <div>
-    <h1>Books</h1>
-    <!-- Ajouter, Lister, Voir, Mettre à jour, Supprimer des livres -->
+    <h1>Gestion des Livres</h1>
+    <button><RouterLink to="/listlivre">About</RouterLink></button>
   </div>
 </template>
 
 <script setup>
-// Logic for Books View
 </script>
