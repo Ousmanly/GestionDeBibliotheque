@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h2>Ajouter un Prêt</h2>
-    <form @submit.prevent="ajouter">
+  <div class="mb-4">
+    <h2>{{ mode === 'ajout' ? 'Ajouter un Prêt' : 'Modifier le Prêt' }}</h2>
+    <form @submit.prevent="submitForm">
       <div class="mb-3">
         <label for="livre" class="form-label">Livre :</label>
         <select class="form-select" v-model="pretForm.livre" id="livre" required>
@@ -22,28 +22,36 @@
         <label for="dateFin" class="form-label">Date de Fin :</label>
         <input type="date" class="form-control" v-model="pretForm.dateFin" id="dateFin" required />
       </div>
-      <button type="submit" class="btn btn-success me-5 mb-5">Ajouter</button>
-      <button type="button" class="btn btn-secondary mb-5" @click="$emit('annuler')">Annuler</button>
+      <button type="submit" class="btn btn-success">{{ mode === 'ajout' ? 'Ajouter' : 'Enregistrer' }}</button>
+      <button type="button" class="btn btn-secondary" @click="annuler">Annuler</button>
     </form>
   </div>
 </template>
 
 <script setup>
-import { ref, defineProps, defineEmits } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps({
   livres: Array,
-  membres: Array
+  membres: Array,
+  mode: String,
+  pretForm: Object
 });
-const emit = defineEmits(['annuler', 'ajouter']);
 
-const pretForm = ref({ livre: '', membre: '', dateDebut: '', dateFin: '' });
+const emit = defineEmits(['annuler', 'ajouter', 'modifier']);
 
-const ajouter = () => {
-  emit('ajouter', { ...pretForm.value });
+const submitForm = () => {
+  if (props.mode === 'ajout') {
+    emit('ajouter');
+  } else {
+    emit('modifier');
+  }
+};
+
+const annuler = () => {
+  emit('annuler');
 };
 </script>
 
 <style scoped>
-/* Ajoutez ici vos styles personnalisés si nécessaire */
 </style>
