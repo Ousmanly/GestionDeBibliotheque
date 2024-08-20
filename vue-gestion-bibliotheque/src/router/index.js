@@ -30,7 +30,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import BooksView from '@/views/BooksView.vue';
 import MembersView from '@/views/MembersView.vue';
 import LoansView from '@/views/LoansView.vue';
-import ListeLivre from '@/components/ListeLivre.vue';
+import ListeLivre from '@/components/Livres/ListeLivre.vue';
 import ListePretLivre from '@/components/Prets/ListePretLivre.vue';
 
 // import AjoutLivre from '@/components/AjoutLivre.vue';

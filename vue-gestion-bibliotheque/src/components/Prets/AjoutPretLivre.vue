@@ -22,7 +22,7 @@
         <label for="dateFin" class="form-label">Date de Fin :</label>
         <input type="date" class="form-control" v-model="pretForm.dateFin" id="dateFin" required />
       </div>
-      <button type="submit" class="btn btn-success">{{ mode === 'ajout' ? 'Ajouter' : 'Enregistrer' }}</button>
+      <button type="submit" class="btn btn-success me-3">{{ mode === 'ajout' ? 'Ajouter' : 'Enregistrer' }}</button>
       <button type="button" class="btn btn-secondary" @click="annuler">Annuler</button>
     </form>
   </div>
