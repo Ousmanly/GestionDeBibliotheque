@@ -1,6 +1,5 @@
 <template>
   <div class="mb-4">
-    <h2>{{ mode === 'ajout' ? 'Ajouter un Membre' : 'Modifier le Membre' }}</h2>
     <form @submit.prevent="handleSubmit">
       <div class="mb-3">
         <label for="nom" class="form-label">Nom :</label>

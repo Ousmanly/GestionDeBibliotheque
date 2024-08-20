@@ -1,10 +1,8 @@
 <template>
   <div class="container mt-5">
-    <!-- <h1 class="mb-4">Liste des Membres</h1> -->
 
     <button class="btn btn-primary mb-3" @click="afficherFormulaire('ajout')">Ajouter un Membre</button>
 
-    <!-- Liste des membres -->
     <table v-if="!afficherFormulaireState && !afficherDetail" class="table table-striped">
       <thead>
         <tr>
@@ -34,7 +32,6 @@
       </tbody>
     </table>
 
-    <!-- Composants enfants -->
     <AjoutMembre
       v-if="afficherFormulaireState"
       :mode="mode"

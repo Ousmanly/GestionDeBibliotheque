@@ -1,10 +1,8 @@
 <template>
   <div class="container mt-5">
-    <!-- <h1 class="mb-4">Liste des Livres</h1> -->
 
     <button class="btn btn-primary mb-3" @click="afficherFormulaire('ajout')">Ajouter un Livre</button>
 
-    <!-- Formulaire d'ajout/modification de livre -->
     <AjoutPretLivre
       v-if="afficherFormulaireState"
       :mode="mode"
@@ -14,14 +12,12 @@
       @modifier="enregistrerModification"
     />
 
-    <!-- Détails du livre -->
     <DetailPretLivre
       v-if="afficherDetail"
       :livreDetail="livreDetail"
       @fermer="fermerDetail"
     />
 
-    <!-- Liste des livres -->
     <table v-if="!afficherFormulaireState && !afficherDetail" class="table table-striped">
       <thead>
         <tr>
@@ -113,5 +109,4 @@ const supprimerLivre = (index) => {
 </script>
 
 <style scoped>
-/* Ajoutez ici vos styles personnalisés si nécessaire */
 </style>

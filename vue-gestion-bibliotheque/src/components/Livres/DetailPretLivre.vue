@@ -18,6 +18,5 @@
   </script>
   
   <style scoped>
-  /* Ajoutez ici vos styles personnalisés si nécessaire */
   </style>
   

@@ -1,31 +1,6 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
-  <!-- <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
-    <div class="container">
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" >
-            <RouterLink to="/books">Livre</RouterLink>
-          </a>
-          <a class="nav-link" >
-            <RouterLink to="members">Membre</RouterLink>
-          </a>
-          <a class="nav-link" >
-            <RouterLink to="loans">Prêts</RouterLink>
-          </a> 
-        </div>
-      </div>
-    </div>
-  </nav>
-    <RouterView />
-
-  </header> -->
   <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container">
       <a class="navbar-brand fw-bold bib" >
         <RouterLink class="list text-decoration-none text-white me-5 fw-bold" to="/books">Biblioteque</RouterLink>
@@ -56,13 +31,18 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
   </nav>
   <RouterView />
-</header>
-
-
+ </header>
 </template>
+
+<script setup>
+</script>
 
 <style scoped>
 .bib{
   font-size: 30px;
+}
+
+.header {
+  background-color: #062348;
 }
 </style>

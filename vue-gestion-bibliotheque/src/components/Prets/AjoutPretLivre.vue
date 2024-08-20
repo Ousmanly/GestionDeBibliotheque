@@ -1,6 +1,5 @@
 <template>
   <div class="mb-4">
-    <h2>{{ mode === 'ajout' ? 'Ajouter un Prêt' : 'Modifier le Prêt' }}</h2>
     <form @submit.prevent="submitForm">
       <div class="mb-3">
         <label for="livre" class="form-label">Livre :</label>
