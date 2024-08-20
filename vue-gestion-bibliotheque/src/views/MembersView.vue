@@ -1,12 +1,12 @@
 <template>
-  <div class="container mt-5 text-center">
+  <div class="container mt-5 ">
     <h1 class="mb-5">Gestion des Membres</h1>
-    <RouterLink class="text-decoration-none text-white bg-success py-2 px-3 fw-bold rounded" to="/listmembre">Ajouter des membres</RouterLink>
-  </div>
+    <ListeMembre/> 
+    </div>
 </template>
 
 <script setup>
-
+import ListeMembre from '@/components/Membres/ListeMembre.vue';
 </script>
 <style scoped>
 
