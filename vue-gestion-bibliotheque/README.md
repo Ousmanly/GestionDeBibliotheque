@@ -107,7 +107,5 @@ npm run dev
 
 
 ## Authors
- - Nom : Ousmane Ibrahima Ly
-  - GitHub : https://github.com/Ousmanly
- - Nom : Mariem Boudallaye Dianifaba
- - GitHub : https://github.com/mariem2012
+ - Nom : [Ousmane Ibrahima Ly](https://github.com/Ousmanly)
+ - Nom : [Mariem Boudallaye Dianifaba](https://github.com/mariem2012)
