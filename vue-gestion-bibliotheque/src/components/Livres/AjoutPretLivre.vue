@@ -21,10 +21,10 @@
           required
         />
       </div>
-      <button type="submit" class="btn btn-success me-3">
+      <button type="submit" class="btn btn-success me-3 mb-2">
         {{ mode === "ajout" ? "Ajouter" : "Enregistrer" }}
       </button>
-      <button type="button" class="btn btn-secondary" @click="$emit('annuler')">
+      <button type="button" class="btn btn-secondary mb-2" @click="$emit('annuler')">
         Annuler
       </button>
     </form>
